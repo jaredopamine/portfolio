@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Shared by every page: tokens, navbar, cursor, and the footer.
+   White pages, a four-grey ink scale, Figtree for text and DM Mono for the
+   small labels, an 8px radius. Colour is kept for one signature: an animated iridescent foil.
+   ========================================================================== */
+
+@font-face{font-family:"Figtree";src:url(../assets/fonts/figtree-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../assets/fonts/figtree-latin-700-normal.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../assets/fonts/figtree-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../assets/fonts/figtree-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../assets/fonts/figtree-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(../assets/fonts/dm-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(../assets/fonts/dm-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(../assets/fonts/fraunces-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(../assets/fonts/fraunces-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Gaegu";src:url(../assets/fonts/gaegu-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Gaegu";src:url(../assets/fonts/gaegu-latin-700-normal.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --ink:#222222;
+  --ink-soft:#727272;
+  --ink-faint:#a1a1a1;
+  --rule:#e8e8e8;
+  --tag:#f3f3f3;
+  --black:#141414;
+  --surface:#f3f3f1;           /* the hero scene */
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --italic:"Fraunces",Georgia,serif;   /* only for the names printed on the boxes */
+  --hand:"Gaegu","Comic Sans MS",cursive; /* only for packaging notes: "series 01", "pull" */
+  --r:8px;
+  --r-sm:4px;
+  --r-pill:999px;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --spring:cubic-bezier(.3,1.5,.5,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scrollbar-gutter:stable;scroll-behavior:smooth;background:#fff;-webkit-text-size-adjust:100%}
+@supports not (scrollbar-gutter:stable){html{overflow-y:scroll}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:#fff;color:#141414;font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;display:flow-root}
+img,video,svg{max-width:100%}
+img{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+::selection{background:#141414;color:#fff}
+.footer ::selection{background:#fff;color:#141414}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:var(--r-sm)}
+.footer :focus-visible{outline-color:#fff}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.todo{background:linear-gradient(transparent 58%,rgba(255,214,10,.5) 58%)}
+.hand{font-family:var(--hand);font-weight:400}
+
+/* ─── NAVBAR: fixed, frosted ───────────────────── */
+.navbar{position:fixed;top:0;left:0;z-index:100;width:100%;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.navbar::before{content:"";position:absolute;inset:0;z-index:0;background:#fff;box-shadow:0 1px 0 var(--rule)}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .navbar::before{background:rgba(255,255,255,.62);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);box-shadow:inset 0 -1px 0 rgba(255,255,255,.9),inset 0 -10px 12px -10px rgba(255,255,255,.7),0 1px 0 var(--rule)}
+}
+@media (prefers-reduced-transparency:reduce){.navbar::before{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 1px 0 var(--rule)}}
+.nav-logo,.nav-right{position:relative;z-index:1}
+.nav-logo{text-decoration:none;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;flex-shrink:0;transform-origin:left center;transition:transform .18s var(--ease);display:inline-flex;align-items:center;min-height:44px;padding-right:8px}
+.nav-logo:hover{transform:scale(1.18)}
+.nav-right{display:flex;align-items:center;flex-shrink:0;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-link{font-size:14px;color:var(--ink-soft);text-decoration:none;transition:color .15s ease;display:inline-flex;align-items:center;gap:4px;padding:12px 6px;margin:-12px -6px}
+.nav-link:hover,.nav-link[aria-current="page"]{color:var(--ink)}
+.nav-link-arrow{display:inline-flex;align-items:center;justify-content:center;width:0;opacity:0;overflow:hidden;transform:translate(-2px,2px);transition:opacity .2s ease,transform .2s var(--ease),width .2s ease}
+.nav-link-arrow svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-link:hover .nav-link-arrow{opacity:1;width:11px;transform:none}
+.nav-toggle{display:none}
+@media (max-width:720px){
+  .navbar{padding:0 26px}
+  .nav-toggle{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-right:-13px;border:0;background:none;color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .nav-toggle-bars{position:relative;width:18px;height:8px}
+  .nav-toggle-bars::before,.nav-toggle-bars::after{content:"";position:absolute;left:0;width:18px;height:1.5px;border-radius:1px;background:currentColor;transition:transform .2s var(--ease)}
+  .nav-toggle-bars::before{top:0}.nav-toggle-bars::after{bottom:0}
+  .navbar.is-open .nav-toggle-bars::before{transform:translateY(3.25px) rotate(45deg);transition-duration:.35s}
+  .navbar.is-open .nav-toggle-bars::after{transform:translateY(-3.25px) rotate(-45deg);transition-duration:.35s}
+  .navbar .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;padding:16px 26px 24px;background:#fff;box-shadow:0 1px 0 var(--rule);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .2s var(--ease),visibility 0s linear .2s}
+  .navbar.is-open .nav-links{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .35s var(--ease),visibility 0s}
+  .navbar .nav-link{font-size:24px;font-weight:500;line-height:1.25;letter-spacing:-.01em;padding:8px 0;margin:0}
+  .nav-link-arrow{width:16px;opacity:1;transform:none}
+  .nav-link-arrow svg{width:16px;height:16px}
+}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  @media (max-width:720px){.navbar .nav-links{background:rgba(255,255,255,.7);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%)}}
+}
+
+/* ─── CURSOR: a dot that inverts what is under it ─
+   A 16px white dot blended with `difference`, so it reads black on white and
+   white on black. Over cards a pill follows it with a label. */
+.custom-cursor__pill{position:fixed;top:0;left:0;z-index:2147483647;white-space:nowrap;pointer-events:none;background:#141414;color:#fff;font-size:13px;font-weight:500;letter-spacing:-.01em;line-height:1.3;padding:7px 14px;border-radius:9999px;box-shadow:0 6px 18px rgba(20,20,20,.18);opacity:0;transform:scale(.6);transform-origin:0 0;transition:opacity .15s,transform .28s cubic-bezier(.3,1.4,.5,1)}
+.custom-cursor__pill.is-visible{opacity:1;transform:none}
+
+/* ─── FOOTER: one big invitation ───────────────────────────── */
+.footer{position:relative;margin-top:clamp(72px,9vw,120px);background:var(--black);color:#fff;overflow:hidden}
+.footer::before{content:"";position:absolute;left:50%;top:-40%;width:90vw;height:90vw;max-width:1100px;max-height:1100px;translate:-50% 0;border-radius:50%;background:conic-gradient(from 0deg,#ff8fcf,#b79bff,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf);filter:blur(120px);opacity:.16;animation:spin 40s linear infinite;pointer-events:none}
+@keyframes spin{to{rotate:360deg}}
+.footer-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(64px,9vw,112px) 48px 22px}
+.footer-eyebrow{font-size:14px;color:var(--ink-faint);margin-bottom:18px}
+.footer-big{font-size:clamp(40px,7.2vw,104px);font-weight:500;letter-spacing:-.035em;line-height:1;color:#fff;max-width:11em}
+.footer-big em{font:italic 500 1em/1 var(--italic);letter-spacing:-.02em}
+.footer-cta{display:inline-flex;align-items:center;gap:12px;margin-top:40px;font-size:18px;font-weight:500;color:#141414;background:#fff;border-radius:99px;padding:18px 28px;text-decoration:none;transition:transform .35s var(--spring),background .3s,color .3s}
+.footer-cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+.footer-cta:hover{transform:translateY(-3px)}
+.footer-cta:hover svg{transform:translate(3px,-3px)}
+.footer-links{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:64px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+.footer-link{position:relative;color:#d4d4d4;font-size:15px;text-decoration:none;transition:color .2s ease}
+.footer-link::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.footer-link:hover{color:#fff}.footer-link:hover::after{transform:scaleX(1)}
+.footer-base{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 24px;padding-top:36px}
+.footer-name,.footer-push{color:var(--ink-faint);font-size:13px}
+@media (max-width:860px){.footer-inner{padding:64px 26px 20px}}
+[hidden]{display:none!important}
+
+/* highlighter sweep on a key phrase */
+.hl{font-weight:700;background:var(--foil-dark);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:foilT 9s linear infinite;letter-spacing:-.01em;padding-bottom:.06em}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s var(--ease);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ─── ACCENT: iridescent foil ──────────────────────────────────
+   The one signature colour: a pastel rainbow that slides slowly across an
+   element. The gradient repeats twice inside a 200%-wide strip so sliding it
+   by 100% loops without a jump. Used sparingly: the italic word in the hero,
+   section labels, bullets, rings, underlines, and button hovers. */
+:root{
+  --foil-light:linear-gradient(90deg,#ff8fcf,#b79bff,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf,#b79bff,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf);
+  --foil-dark:linear-gradient(90deg,#c2338a,#6b3fd0,#1f7fc4,#138c70,#b87d0c,#d4552b,#c2338a,#6b3fd0,#1f7fc4,#138c70,#b87d0c,#d4552b,#c2338a);
+  --foil-v:linear-gradient(180deg,#ff8fcf,#b79bff,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf,#b79bff,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf);
+  --acc-bead:radial-gradient(circle at 32% 26%,#fff 0,rgba(255,255,255,.7) 12%,rgba(255,255,255,0) 46%),var(--foil-light);
+  --acc-tile:linear-gradient(155deg,rgba(255,255,255,.85) 0,rgba(255,255,255,.1) 46%,rgba(20,20,20,.1) 100%),var(--foil-light);
+  --acc-bar:linear-gradient(180deg,rgba(255,255,255,.7) 0,rgba(255,255,255,0) 40%),var(--foil-v);
+  --acc-hbar:linear-gradient(180deg,rgba(255,255,255,.7) 0,rgba(255,255,255,0) 50%),var(--foil-light);
+}
+@keyframes foil{from{background-position:0 0,0% 0}to{background-position:0 0,100% 0}}
+@keyframes foilY{from{background-position:0 0,0 0%}to{background-position:0 0,0 100%}}
+@keyframes foilT{from{background-position:0% 0}to{background-position:100% 0}}
+.foil-text,.kicker,.meta-label,.eyebrow{background:var(--foil-dark);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:foilT 9s linear infinite}
+.kicker{display:block;width:max-content}
+.foil-text{display:inline-block;padding:0 .06em .14em;margin-bottom:-.14em;filter:drop-shadow(0 1px 0 rgba(255,255,255,.9))}
+.contrib li::before{content:"";width:9px;height:9px;top:.62em;left:2px;border-radius:50%;background:var(--acc-bead);background-size:100% 100%,200% 100%;animation:foil 9s linear infinite;box-shadow:0 1px 2px rgba(20,20,20,.4),inset -1px -1px 1.5px rgba(20,20,20,.25)}
+.quote{border-left:0;position:relative}
+.quote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:var(--acc-bar);background-size:100% 100%,100% 200%;animation:foilY 9s linear infinite}
+.rail-link.active .pip{background:var(--acc-bead);background-size:100% 100%,200% 100%;animation:foil 9s linear infinite;border-color:#5d626a;box-shadow:0 1px 3px rgba(20,20,20,.35)}
+.rail-link.got .pip{background:var(--acc-bead);background-size:100% 100%,200% 100%;animation:foil 9s linear infinite;border-color:#aeb2b9;opacity:.7}
+::selection{background:#141414;color:#fff}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}}
+
+/* floating colour behind heroes */
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;will-change:transform}
+.orb.o1{width:560px;height:560px;right:-120px;top:6%;background:conic-gradient(from 20deg,#ff8fcf,#b79bff,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf);animation:drift1 22s ease-in-out infinite alternate}
+.orb.o2{width:380px;height:380px;left:-100px;bottom:-60px;background:conic-gradient(from 200deg,#6ec6ff,#7be8c8,#ffe27a,#ffab85,#ff8fcf,#b79bff,#6ec6ff);opacity:.35;animation:drift2 26s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(0,0) rotate(0)}to{transform:translate(-60px,50px) rotate(90deg)}}
+@keyframes drift2{from{transform:translate(0,0) rotate(0)}to{transform:translate(70px,-40px) rotate(-70deg)}}

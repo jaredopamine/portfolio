@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Triceratops | Jared Martinez</title>
+  <meta name="description" content="Case study: giving a Discord-only UC Davis club its first website. I led a team of 6 through 17 weeks of research, design, and build.">
+  <meta name="theme-color" content="#0e0e10">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.7L12 17.5l-5.9 3.3 1.3-6.7L2.5 9.5l6.6-.8z' fill='%23222222'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+  <link rel="stylesheet" href="../css/dark.css">
+  <script>document.documentElement.setAttribute('data-theme','dark')</script>
+  <script>(function(){try{history.scrollRestoration='manual'}catch(e){}if(location.hash)return;var m=false;['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){m=true},{passive:true,once:true})});var de=document.documentElement;de.style.scrollBehavior='auto';setTimeout(function(){de.style.scrollBehavior=''},1800);function top(){if(!m&&(window.scrollY||de.scrollTop)){try{scrollTo({top:0,left:0,behavior:'instant'})}catch(e){scrollTo(0,0)}}}top();addEventListener('DOMContentLoaded',top);addEventListener('load',function(){top();var n=0;(function t(){top();if(++n<30)setTimeout(t,50)})()});addEventListener('pageshow',function(){m=false;top()})})()</script>
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body id="top">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" repeatCount="indefinite"/></linearGradient></defs></svg>
+  <nav class="navbar" aria-label="Main">
+    <a class="nav-logo" href="../index.html" aria-label="Jared, home">Jared</a>
+    <div class="nav-right">
+      <div class="nav-links" id="nav-menu">
+        <a class="nav-link" href="../index.html#projects" aria-current="page">Work</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" data-site="resume" data-root="../" href="#" target="_blank" rel="noopener noreferrer">Résumé<span class="nav-link-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 17.5 11-11m0 9v-9h-9"/></svg></span></a>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span class="nav-toggle-bars" aria-hidden="true"></span></button>
+    </div>
+  </nav>
+
+  <header class="cs-head">
+    <a class="back-m" href="../index.html#projects"><span aria-hidden="true">←</span> Back home</a>
+    <div class="cs-top">
+      <div class="cs-titles">
+        <h1 class="title">Triceratops</h1>
+        <p class="subtitle">Giving a Discord-only club a front door</p>
+        <a class="live-link" href="https://triceratops-website.m-jared020.workers.dev/" target="_blank" rel="noopener noreferrer" data-cursor="Open the live site">Visit the live site<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 17.5 11-11m0 9v-9h-9"/></svg></a>
+      </div>
+      <div class="meta">
+        <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value"><span>Project Lead</span><span>UX Research Lead</span><span>Designer &amp; Developer</span></span></div>
+        <div class="meta-item"><span class="meta-label">Team</span><span class="meta-value"><span>6 Designer-Developers</span><span>6 Graphic Designers</span></span></div>
+        <div class="meta-item"><span class="meta-label">Timeline</span><span class="meta-value"><span>Jun – Oct 2026</span><span>(17 Weeks)</span></span></div>
+        <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value"><span>Figma</span><span>FigJam</span><span>Figma MCP</span><span>Claude Code</span><span>VS Code</span><span>GitHub</span><span>Notion</span></span></div>
+      </div>
+    </div>
+    <div class="hero" id="cover" aria-label="The DinoDex page of the Triceratops site, scrolling">
+      <div class="win-view"><img src="../assets/img/tri-dd-final.webp" alt="The final DinoDex page of the Triceratops website, scrolling slowly" width="1200" height="5604" loading="eager"></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="rail" id="rail" aria-label="Sections">
+      <a class="rail-link rail-home" href="../index.html#projects"><span class="arr" aria-hidden="true">←</span>Back home</a>
+      <div class="rail-list">
+        <a class="rail-link is-tldr" href="#overview"><span class="pip"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.7L12 17.5l-5.9 3.3 1.3-6.7L2.5 9.5l6.6-.8z"/></svg></span>Context</a>
+        <a class="rail-link" href="#problem"><span class="pip"></span>Problem</a>
+        <a class="rail-link" href="#research"><span class="pip"></span>User Research</a>
+        <a class="rail-link" href="#leading"><span class="pip"></span>Leading the Team</a>
+        <a class="rail-link" href="#design"><span class="pip"></span>Design Process</a>
+        <a class="rail-link" href="#tradeoffs"><span class="pip"></span>Tradeoffs</a>
+        <a class="rail-link" href="#solution"><span class="pip"></span>Solution</a>
+        <a class="rail-link" href="#outcome"><span class="pip"></span>Outcome</a>
+        <a class="rail-link" href="#reflection"><span class="pip"></span>Reflection</a>
+      </div>
+      <div class="rail-count" aria-live="polite">Read <b>0</b>/8</div>
+      <a class="rail-link rail-top" href="#top">↑ Back to top</a>
+    </nav>
+
+    <main class="page">
+<!-- ═══ CONTEXT ═══ -->
+      <section class="section" id="overview">
+        <div class="kicker">Context</div>
+        <h2 class="statement reveal">I led a team of six to give a Discord-only club its first website</h2>
+        <div class="cards reveal">
+          <div class="card"><h3>Club</h3><p><strong>Triceratops</strong> is a UC Davis club that hides handmade crochet dinos around campus. Staff “drop” them, and students “hunt” for them and collect them.</p></div>
+          <div class="card"><h3>Problem</h3><p>The club had no website. Instagram got people curious, but the rules and drop alerts lived in a confusing Discord, so many never made it in.</p></div>
+          <div class="card"><h3>Impact</h3><p>We launched at the Involvement Fair: <strong>790 site visits</strong> and <strong>47 new Discord members</strong> in launch week.</p></div>
+          <div class="card sketch"><h3>Endorsement</h3><p>“I think the website is really helpful and useful as a guiding tool for hunters new to Davis Triceratops, showcasing the information in a quick and concise way to make it easy for newbies to understand.”</p><span class="by">— Vivian, Social Media Team Lead</span></div>
+        </div>
+        <div class="kicker sub reveal">Solution sneak peek</div>
+        <figure class="figure reveal">
+          <div class="frame"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/tri-tour-poster.webp" aria-label="Screen recording of the live Triceratops website, scrolling quickly from top to bottom through its five pages: Home, Getting Started, DinoDex, Rules, and About Us"><source src="../assets/video/tri-site-tour.webm" type="video/webm"><source src="../assets/video/tri-site-tour.mp4" type="video/mp4"></video></div>
+          <figcaption>A quick scroll through all five pages of the live site: Home, Getting Started, DinoDex, Rules, and About Us.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section" id="problem" data-card="Problem">
+        <div class="kicker">Problem</div>
+        <h2 class="statement reveal">Instagram got people curious, but joining meant decoding a Discord</h2>
+        <div class="prose reveal">
+          <p>The club’s Discord had about 5,000 members, but only <strong>100 actively took part</strong> (about 2%). The how-to info was split across <strong>4 channels</strong> for members. Even co-president Thanh needed help when first joining the club from the other co-president, Ava:</p>
+        </div>
+        <blockquote class="quote reveal"><p>“Without Ava, I wouldn’t have known how to navigate around the rules and how to get notifications.”</p><cite>Thanh, co-president</cite></blockquote>
+        <figure class="figure panel reveal">
+          <div class="frame dark"><img class="zoomable" src="../assets/img/tri-discord-channels.webp" alt="The club’s Discord sidebar, with separate info channels for hunts, flash sales, events, and Aggieceratops" width="852" height="795" loading="lazy"><span class="hlbox" style="left:1.64%;top:3.77%;width:38.26%;height:25.66%;--n:1" aria-hidden="true"><b>1</b><i>Events</i></span><span class="hlbox" style="left:1.64%;top:48.30%;width:38.26%;height:20.38%;--n:2" aria-hidden="true"><b>2</b><i>Flash sales</i></span><span class="hlbox" style="left:1.64%;top:70.69%;width:38.26%;height:25.66%;--n:3" aria-hidden="true"><b>3</b><i>Hunts</i></span><span class="hlbox" style="left:49.77%;top:3.77%;width:34.98%;height:25.66%;--n:4" aria-hidden="true"><b>4</b><i>Aggieceratops</i></span><span class="zoom-hint">Zoom</span></div>
+          <figcaption>The how-to info lived in four separate channel groups.</figcaption>
+        </figure>
+        <div class="prose reveal"><p>Our clients, the club’s co-presidents Thanh and Ava, wanted a site for <strong>new students</strong> (UC Davis students new to the club) that would:</p></div>
+        <div class="contrib reveal"><ul>
+          <li><strong>Get them to join the Discord and Instagram,</strong> where the club actually runs.</li>
+          <li><strong>Explain how the club works,</strong> with the Rules and DinoDex pages as must-haves.</li>
+          <li>Feel <strong>friendly and handmade, not corporate,</strong> and stay <strong>easy for the board to update</strong> after we hand it off.</li>
+        </ul></div>
+      </section>
+
+      <section class="section" id="research" data-card="Research">
+        <div class="kicker">User Research</div>
+        <h2 class="statement reveal">To understand why new students stay out, we surveyed and interviewed them</h2>
+        <div class="prose reveal">
+          <p>The client’s main audience, new students, turned out to be <strong>three different groups</strong>. I set up the cohorts, a screener survey, and interview scripts, and the whole team ran them: <strong>62 survey responses</strong>, <strong>15 interviews</strong> (I ran 4), and a competitive SWOT analysis of 10 similar sites.</p>
+        </div>
+        <div class="personas reveal" role="group" aria-label="The three audiences and what each one is thinking">
+            <svg class="p-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+              <filter id="wobble" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="1" result="n"><animate class="boil" attributeName="seed" values="1;4;7;2;9;5" dur="0.9s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4"/></filter>
+              <linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" begin="-3s" repeatCount="indefinite"/></linearGradient><linearGradient id="pg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" begin="-6s" repeatCount="indefinite"/></linearGradient><linearGradient id="pg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" begin="-9s" repeatCount="indefinite"/></linearGradient>
+              <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".45" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+            </defs></svg>
+            <div class="persona" style="--i:0">
+              <div class="bubble"><svg class="bubble-line" viewBox="0 0 240 112" preserveAspectRatio="none" aria-hidden="true"><path d="M18 6H222Q234 6 234 18V70Q234 82 222 82H138L118 104L104 82H18Q6 82 6 70V18Q6 6 18 6Z"/></svg><p>“Is this club worth my time?”</p></div>
+              <svg class="person" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg2)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg2)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg>
+              <h3>Interested Observer</h3><p class="pdesc">Has seen a drop, never joined</p><span class="ptag">Primary</span>
+            </div>
+            <div class="persona" style="--i:1">
+              <div class="bubble"><svg class="bubble-line" viewBox="0 0 240 112" preserveAspectRatio="none" aria-hidden="true"><path d="M18 6H222Q234 6 234 18V70Q234 82 222 82H138L118 104L104 82H18Q6 82 6 70V18Q6 6 18 6Z"/></svg><p>“What is Triceratops?”</p></div>
+              <svg class="person" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg1)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg1)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg>
+              <h3>Unaware Candidate</h3><p class="pdesc">Never heard of the club</p><span class="ptag">Primary</span>
+            </div>
+            <div class="persona" style="--i:2">
+              <div class="bubble"><svg class="bubble-line" viewBox="0 0 240 112" preserveAspectRatio="none" aria-hidden="true"><path d="M18 6H222Q234 6 234 18V70Q234 82 222 82H138L118 104L104 82H18Q6 82 6 70V18Q6 6 18 6Z"/></svg><p>“I wish I could find information easier.”</p></div>
+              <svg class="person" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg3)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg3)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg>
+              <h3>Active Participant</h3><p class="pdesc">Already in the Discord</p><span class="ptag">Secondary</span>
+            </div>
+          </div>
+        
+        <figure class="figure reveal">
+          <div class="duo">
+            <img class="zoomable" src="../assets/img/tri-interview-1.webp" alt="Google Meet interview with the club’s co-president, who is gesturing as he explains" width="1523" height="770" loading="lazy" style="--ar:1.9779">
+            <img class="zoomable" src="../assets/img/tri-interview-2.webp" alt="Google Meet interview with a club member holding up her crochet dino" width="434" height="773" loading="lazy" style="--ar:0.5614">
+          </div>
+          <figcaption>Interviews on Google Meet. 2 out of the 4 I ran, with interviewee names blurred.</figcaption>
+        </figure>
+        <div class="prose reveal"><p>Here is what we found:</p></div>
+        <div class="stats three">
+          <div class="stat ring-stat reveal"><div class="ring" style="--off:40"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" pathLength="100"/></svg><div class="val"><span data-count="60" data-suffix="%">60%</span></div></div><div class="lab">of Interested Observers said not knowing the rules stopped them</div><div class="cap">Their #1 barrier (9 of 15)</div></div>
+          <div class="stat ring-stat reveal" style="--d:0.08s"><div class="ring" style="--off:18"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" pathLength="100"/></svg><div class="val"><span data-count="82" data-suffix="%">82%</span></div></div><div class="lab">of Unaware Candidates would look up the club on social media first</div><div class="cap">23 of 28. The rest would Google it. Either way, the how-to info lived only in Discord</div></div>
+          <div class="stat ring-stat reveal" style="--d:0.16s"><div class="ring" style="--off:21"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" pathLength="100"/></svg><div class="val"><span data-count="79" data-suffix="%">79%</span></div></div><div class="lab">of Active Participants said low pressure made it easy to get started</div><div class="cap">15 of 19. So the site had to feel casual, not like a commitment</div></div>
+        </div>
+        <blockquote class="quote reveal"><p>“I followed the Instagram but I didn’t know you had to go on the Discord to find info on the drops.”</p><cite>Survey, Active Participant</cite></blockquote>
+        <div class="hmw sketch reveal"><small>Takeaway</small><p>The site’s job isn’t discovery, since Instagram already does that. Its job is <span class="hl">clarity</span>: explain the rules, show it’s low-commitment, and hand people to the Discord.</p></div>
+      </section>
+
+      <section class="section" id="leading" data-card="Leadership">
+        <div class="kicker">Leading the Team</div>
+        <h2 class="statement reveal">My team ranged from people who had never coded to people with two years of client work</h2>
+        <div class="prose reveal"><p>So I set the project up like a real client job and made sure everyone could keep up:</p></div>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="igr" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="46" y2="46"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 24 24" to="360 24 24" dur="9s" repeatCount="indefinite"/></linearGradient></defs></svg><div class="irows reveal"><div class="icard"><span class="icard-ic" style="--i:0"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="url(#igr)" d="M12 5h16l10 10v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4z"/><path d="M28 5v10h10" fill="none" stroke="#0e0e10" stroke-opacity=".55" stroke-width="2.6" stroke-linejoin="round"/><path d="M15 27h18M15 34h12" stroke="#0e0e10" stroke-width="3.4" stroke-linecap="round"/><g fill="none"></g></svg></span><h3>Set it up like a client job</h3><p>A signed contract, team agreements, 1-on-1s about goals and worries, and a Notion hub for timelines, scripts, and notes.</p></div><div class="icard"><span class="icard-ic" style="--i:1"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="20" r="12" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 30l10 10" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.5"/><g fill="none"></g></svg></span><h3>Walked through each research step</h3><p>In weekly meetings, from writing research questions to interviewing and SWOT.</p></div><div class="icard"><span class="icard-ic" style="--i:2"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 14L7 24l11 10M30 14l11 10-11 10" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><g fill="none"></g></svg></span><h3>Got everyone ready to build</h3><p>I introduced <strong>HTML, CSS, and JS</strong>, helped set up VS Code and GitHub, and assigned <strong>Odin Project homework</strong> so designers could build with AI.</p></div><div class="icard"><span class="icard-ic" style="--i:3"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="36" height="36" rx="8" fill="url(#igr)"/><path d="M6 18h36M19 18v24" stroke="#0e0e10" stroke-width="3.4" stroke-linecap="round"/><g fill="none"></g></svg></span><h3>Built the shared code template</h3><p>With Claude Code and Figma MCP, so every page started from the same nav, footer, and styles.</p></div><div class="icard"><span class="icard-ic" style="--i:4"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="14" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="4.5" fill="url(#igr)"/><path d="M24 2v7M24 39v7M2 24h7M39 24h7" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"/><g fill="none"></g></svg></span><h3>Brought in 4 outside reviewers</h3><p>Including a product designer at SalesHood. I combined their audits with client feedback into one priority list.</p></div><div class="icard"><span class="icard-ic" style="--i:5"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="url(#igr)" d="M9 39l2-10L31 9a4.5 4.5 0 0 1 6.4 0l1.6 1.6a4.5 4.5 0 0 1 0 6.4L19 37z"/><path d="M28 12l8 8" stroke="#0e0e10" stroke-opacity=".5" stroke-width="2.6" stroke-linecap="round"/><g fill="none"></g></svg></span><h3>Coordinated a graphics team</h3><p>They made 24 custom illustrations for the site.</p></div><div class="icard"><span class="icard-ic" style="--i:6"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 25l10 10L39 13" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.5"/><g fill="none"></g></svg></span><h3>Took over QA myself</h3><p>When fall classes slowed the team down, so we’d still hit launch.</p></div></div>
+      </section>
+
+      <section class="section" id="design" data-card="Design">
+        <div class="kicker">Design Process</div>
+        <div class="beat reveal">
+          <h3>People lit up talking about their own dinos, so I turned a list into a collection</h3>
+          <p>The DinoDex was my page, where members look up the club’s dinos and information related to their type and color. It started as “Yarn Types,” a plain list. In interviews, members talked about their dinos <strong>like pets</strong>, so I renamed it after the <strong>Pokédex</strong> and made it feel like a collection. The client approved.</p>
+        </div>
+        <div class="beat reveal">
+          <h3>Reviewers said the page was too crowded, so I simplified it</h3>
+          <p>In Hi-Fi V1, our outside reviewers said the top of the DinoDex was <strong>too crowded</strong>, with a title, intro, search bar, and filters all at once. They also found the <strong>Dino Types popup</strong> awkward. So the final shows dino types as <strong>static cards</strong>, and the search and filters went too (see Tradeoffs).</p>
+        <div class="stages" data-tabs data-auto>
+            <div class="tabs" role="tablist" aria-label="DinoDex versions">
+              <button class="tab" role="tab" id="tab-lofi" aria-controls="p-lofi">Lo-fi</button>
+              <button class="tab" role="tab" id="tab-mid" aria-controls="p-mid">Mid-fi</button>
+              <button class="tab" role="tab" id="tab-hifi" aria-controls="p-hifi">Hi-Fi V1</button>
+              <button class="tab" role="tab" id="tab-final" aria-controls="p-final">Final</button>
+            </div>
+            <div class="stage" role="tabpanel" id="p-lofi" aria-labelledby="tab-lofi">
+              <div><h4>Lo-fi</h4><p>Paper sketches with tabs, filter pills, and a card grid, to explore how to group dinos.</p></div>
+              <div><div class="win-frame"><div class="scrollframe"><img class="zoomable" src="../assets/img/tri-dd-lofi.webp" alt="Lo-fi paper sketch of the DinoDex page with tabs, filter pills, and a card grid" width="1400" height="1328" loading="lazy"></div></div></div>
+            </div>
+            <div class="stage" role="tabpanel" id="p-mid" aria-labelledby="tab-mid">
+              <div><h4>Mid-fi</h4><p>Dino info on top, cards below, and the spreadsheet link at the bottom.</p></div>
+              <div><div class="win-frame"><div class="scrollframe"><img class="zoomable" src="../assets/img/tri-dd-midfi.webp" alt="Mid-fi DinoDex page: dino anatomy sections on top, beastiary cards below, spreadsheet link at the bottom" width="1200" height="2680" loading="lazy"></div></div></div>
+            </div>
+            <div class="stage" role="tabpanel" id="p-hifi" aria-labelledby="tab-hifi">
+              <div><h4>Hi-Fi V1</h4><p>Cards moved to the top, with search and 5 filters. Reviewers found it too crowded.</p></div>
+              <div><div class="win-frame"><div class="scrollframe"><img class="zoomable" src="../assets/img/tri-dd-hifi.webp" alt="Hi-Fi V1 DinoDex page with a search bar, five filters, and a master-detail dino card" width="1200" height="3208" loading="lazy"></div></div></div>
+            </div>
+            <div class="stage" role="tabpanel" id="p-final" aria-labelledby="tab-final">
+              <div><h4>Final</h4><p>Curated popular dinos and simple, static type cards. Search and filters are gone so the club can keep it updated.</p></div>
+              <div><div class="win-frame"><div class="scrollframe"><img class="zoomable" src="../assets/img/tri-dd-final.webp" alt="The final launched DinoDex page with an illustrated hero, popular dinos, horn colors, yarn types and dino types" width="1200" height="5604" loading="lazy"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tradeoffs" data-card="Tradeoffs">
+        <div class="kicker">Tradeoffs</div>
+        <h2 class="statement reveal">The club will run this site without us, so I designed for the people who keep it running</h2>
+        <div class="prose reveal"><p>After handoff, the club updates the site on its own. That shaped my biggest decisions more than any visual feedback did.</p></div>
+        <div class="beat reveal">
+          <h3>I cut search and filters so the club could keep the page up to date</h3>
+          <p>Thanh and Ava realized the club adds new dinos all the time, and a full catalog meant <strong>hand-coding a card for every one</strong>. So I swapped it for a starter set: <strong>the 8 monthly dinos plus the top 5 most sought-after</strong>, with a “View Full Catalog” button to the spreadsheet they already update. Less flashy, but easy to keep current.</p>
+          <figure class="figure panel">
+            <div class="ba" data-ba style="--p:50%">
+              <img class="ba-img" src="../assets/img/tri-ba-final.webp" alt="The final DinoDex: 13 curated dinos with a link to the club’s full catalog" width="1200" height="2000" loading="lazy">
+              <div class="ba-top"><img src="../assets/img/tri-ba-v1.webp" alt="Hi-Fi V1 DinoDex: a search bar, five filters and a full catalog grid" width="1200" height="2000" loading="lazy"></div>
+              <div class="ba-handle" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+              <span class="ba-tag l">Hi-Fi V1</span><span class="ba-tag r">Final</span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare Hi-Fi V1 with the final DinoDex">
+            </div>
+            <figcaption>Drag to compare. Hi-Fi V1 had search, 5 filters and a full catalog grid. The final shows 13 curated dinos and a link to the club’s sheet.</figcaption>
+          </figure>
+          <div class="contrib">
+            <ul>
+              <li><strong>Folded “Find a Drop” into Home.</strong> The client said no to its drop schedule so drops could stay spontaneous, which left just the <strong>drop heatmap</strong>. I moved it to Home, and the client agreed.</li>
+              <li><strong>Dropped “dropper” descriptions.</strong> I’d pitched describing each drop and its dropper (the staff member who hides the dinos). The client said no: hunters had followed droppers to see where dinos were hidden, so naming them was a <strong>safety risk</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solution" data-card="Solution">
+        <div class="kicker">Solution</div>
+        <div class="beat reveal">
+          <h3>Everything a hunter needs, on one page that works on a phone</h3>
+          <p>The final DinoDex gives hunters one place to learn every dino: the <strong>8 monthly dinos</strong> and the <strong>5 most sought-after</strong>, what makes each type and horn color unique, and a link to the full catalog. The other designers also used my layout as their <strong>reference for mobile</strong>.</p>
+          <figure class="figure panel devices reveal">
+            <div class="dv-desktop">
+              <video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/tri-desktop-poster.webp" aria-label="Screen recording of the DinoDex page on desktop, scrolling past the monthly dinos, the most sought-after dinos, and the horn colors"><source src="../assets/video/tri-dinodex-desktop.webm" type="video/webm"><source src="../assets/video/tri-dinodex-desktop.mp4" type="video/mp4"></video>
+            </div>
+            <div class="dv-phone"><div class="dv-phone-shell"><div class="phone"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/tri-mobile-poster.webp" aria-label="Screen recording of the DinoDex scrolling on a phone, swiping through the Monthly Dinos carousel"><source src="../assets/video/tri-dinodex-mobile.webm" type="video/webm"><source src="../assets/video/tri-dinodex-mobile.mp4" type="video/mp4"></video></div></div></div>
+          </figure>
+          <div class="contrib">
+            <ul>
+              <li><strong>Popular Dinos</strong> show the recurring monthly dinos and the most sought-after dinos dropped throughout events in the club’s history.</li>
+              <li><strong>Horn Colors and Yarn Types</strong> explain what makes each dino unique: the horn color marks the month or event it was made for, and special dinos use one-of-a-kind yarn combinations.</li>
+              <li><strong>Dino Types</strong> explain how each dino is obtained (Monthly, Flash Sale, Event, Aggieceratops, or Limited), so hunters know what to look out for.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="outcome" data-card="Results">
+        <div class="kicker">Outcome</div>
+        <div class="stmt-row reveal"><h2 class="statement">We launched on the hard deadline, and the site became the club’s top Discord invite</h2><a class="live-link" href="https://triceratops-website.m-jared020.workers.dev/" target="_blank" rel="noopener noreferrer" data-cursor="Open the live site">See it live<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 17.5 11-11m0 9v-9h-9"/></svg></a></div>
+        <div class="prose reveal">
+          <p>The site went live on <strong>Oct 13</strong> at the UC Davis Involvement Fair. The fair brought in plenty of members on its own, and so did the website: it became the club’s <strong>#1 Discord invite link</strong>, with <strong>47 joins</strong> traced straight to it.</p>
+        </div>
+        <blockquote class="quote reveal"><p>“We had 300 people come by, and a good half of them scanned the website QR code.”</p><cite>Thanh, co-president, on fair day (his estimate)</cite></blockquote>
+        <div class="stats">
+          <div class="stat reveal" ><div class="val"><span data-count="790">790</span></div><div class="lab">Site visits</div><div class="cap">Launch week, Oct 13–20</div></div>
+          <div class="stat reveal" style="--d:0.07s"><div class="val"><span data-count="47">47</span></div><div class="lab">New Discord members</div><div class="cap">47 of the 129 Discord joins in the last 28 days (36%) came through the site’s “Join Our Discord” CTA.</div></div>
+          <div class="stat reveal" style="--d:0.14s"><div class="val"><span data-count="1229">1,229</span></div><div class="lab">People reached by the site’s launch story</div><div class="cap">The site gave the club a new link to share on Instagram. 68% of the people that story reached didn’t follow the club yet.</div></div>
+          <div class="stat reveal" style="--d:0.21s"><div class="val"><span data-count="0">0</span></div><div class="lab">Server errors</div><div class="cap">Across 159K requests in the first 30 days</div></div>
+        </div>
+        <div class="beat reveal"><h3>Members said it fixed what we found in research</h3><p>After launch, Thanh collected feedback from members. Their words echo the problems we started with: too many Discord channels, confusing setup for newcomers, and wanting the club to feel welcoming.</p></div>
+        <div class="voices reveal" role="group" aria-label="What members said about the site"><div class="voice-card" style="--i:0"><div class="qb"><p>“I was a little overwhelmed at first with all the channels in the club’s Discord server, but the website really helped lay out the chronological steps on how to participate.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg1)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg1)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>General member, 2nd year</cite></div><div class="voice-card" style="--i:1"><div class="qb"><p>“As someone who is new to Discord entirely… this website helped me understand how the club worked without having to ask for more help from my peers.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg2)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg2)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>General member, 3rd year</cite></div><div class="voice-card" style="--i:2"><div class="qb"><p>“The website makes the club… feel even more official. It really does capture the friendly and welcoming vibes of the club.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg3)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg3)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>Jessica, staff alumni</cite></div><div class="voice-card" style="--i:3"><div class="qb"><p>“The heatmap… helps me as a dropper identify less frequent areas to hopefully focus on hiding dinos in new locations.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg1)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg1)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>Olivia, production team lead</cite></div></div>
+      </section>
+
+      <section class="section" id="reflection" data-card="Reflection">
+        <div class="kicker">Reflection</div>
+        <h2 class="statement reveal">What I’d do differently</h2>
+        <div class="contrib reveal">
+          <ul>
+            <li><strong>Ask “who keeps this running?” from day one.</strong> My biggest cuts came from upkeep and safety, and they showed up late, at hi-fi. Next time I’d ask earlier.</li>
+            <li><strong>Design for phones sooner.</strong> Hunters use the site mid-hunt, but we didn’t start mobile designs until <strong>week&nbsp;12</strong>.</li>
+            <li><strong>Test the live site.</strong> I’d like to watch a few new students use the real site.</li>
+          </ul>
+        </div>
+        <div class="prose reveal"><p>Thank you to Triceratops and its co-presidents, Thanh Nguyen and Ava Meade; to my teammates Anqi Su, Nathan Salas, Leif Caratiquit, Lyanna Nguyen, and Lisa Wang; and to the volunteer graphics team.</p></div>
+      </section>
+      <div class="tail"></div>
+    </main>
+  </div>
+
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <p class="footer-eyebrow reveal">Open to UX design internships</p>
+      <h2 class="footer-big reveal">Let’s make something <em>easy to use</em> together.</h2>
+      <a class="footer-cta reveal" data-site="email" href="#" data-cursor="Say hello">Say hello <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 17.5 11-11m0 9v-9h-9"/></svg></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a class="footer-link" data-site="linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-link" data-site="resume" data-root="../" href="#" target="_blank" rel="noopener noreferrer">Résumé</a>
+        <a class="footer-link" href="../index.html#projects">Work</a>
+        <a class="footer-link" href="../about.html">About</a>
+      </nav>
+      <div class="footer-base">
+        <div class="footer-name">© 2026 Jared Martinez</div>
+        <div class="footer-push">Designed &amp; coded by Jared</div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lb" aria-label="Enlarged image">
+    <div class="lb-in"><button class="lb-x" type="button">Close ✕</button><img alt=""><p></p></div>
+  </dialog>
+
+    <script src="../js/site.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/cursor.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

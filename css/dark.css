@@ -1,0 +1,90 @@
+/* DARK THEME (the site is dark-only). Every page sets <html data-theme="dark"> in an inline
+   script in <head>; remove that line to see the light version again. Tokens flip first; the rules below fix surfaces that were
+   hard-coded white. Browser-window mockups and phone screens stay light on purpose:
+   they show the real (light) product. */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#f3f3f1;--ink-soft:#a9a9ad;--ink-faint:#77777c;
+  --rule:#29292c;--tag:#1d1d20;--surface:#151517;
+  --bg:#0e0e10;--elev:#161618;--elev2:#1e1e21;
+  --foil-dark:var(--foil-light);
+}
+html[data-theme="dark"],html[data-theme="dark"] body{background:var(--bg);color:var(--ink)}
+html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:background-color .4s ease,color .4s ease,border-color .4s ease,box-shadow .4s ease!important}
+/* the navbar swaps instantly (its links used to flash a different shade mid-fade) */
+html.theme-anim .navbar *,html.theme-anim .navbar *::before,html.theme-anim .navbar *::after{transition:none!important}
+
+/* navbar */
+html[data-theme="dark"] .navbar::before{background:rgba(14,14,16,.72);box-shadow:0 1px 0 var(--rule)}
+@supports (backdrop-filter:blur(1px)){html[data-theme="dark"] .navbar::before{background:rgba(14,14,16,.6);box-shadow:inset 0 -1px 0 rgba(255,255,255,.04),0 1px 0 var(--rule)}}
+@media (max-width:720px){html[data-theme="dark"] .navbar .nav-links{background:rgba(14,14,16,.92)}}
+html[data-theme="dark"] .nav-logo,html[data-theme="dark"] .nav-link:hover,html[data-theme="dark"] .nav-link[aria-current="page"]{color:var(--ink)}
+html[data-theme="dark"] .nav-toggle{color:var(--ink)}
+html[data-theme="dark"] ::selection{background:#f3f3f1;color:#141414}
+html[data-theme="dark"] .custom-cursor__pill{background:#f3f3f1;color:#141414}
+html[data-theme="dark"] :focus-visible{outline-color:#f3f3f1}
+
+/* home */
+html[data-theme="dark"] .hero h1{color:var(--ink)}
+html[data-theme="dark"] .chip{background:rgba(30,30,34,.7);color:var(--ink);box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+html[data-theme="dark"] .orb{opacity:.34}
+html[data-theme="dark"] .orb.o2{opacity:.22}
+html[data-theme="dark"] .btn{color:var(--ink);border-color:var(--ink)}
+html[data-theme="dark"] .btn::before{background:#f3f3f1}
+html[data-theme="dark"] .btn:hover{color:#141414}
+html[data-theme="dark"] .btn.solid{background:#f3f3f1;color:#141414}
+html[data-theme="dark"] .btn.solid::before{background:var(--foil-light);background-size:200% 100%}
+html[data-theme="dark"] .scroll-cue{border-color:rgba(255,255,255,.35)}
+html[data-theme="dark"] .scroll-cue::after{background:var(--ink)}
+html[data-theme="dark"] .marquee-track span{color:var(--ink)}
+html[data-theme="dark"] .marquee-track span:hover,html[data-theme="dark"] .a-tools span:hover{background:var(--elev2);box-shadow:0 0 0 1px var(--rule)}
+html[data-theme="dark"] .work-cover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+html[data-theme="dark"] .work-card.is-sealed .work-cover{background:linear-gradient(110deg,#17171a 30%,#202024 50%,#17171a 70%);background-size:200% 100%}
+html[data-theme="dark"] .work-tag{background:var(--tag);color:var(--ink-soft)}
+html[data-theme="dark"] .work-title{color:var(--ink)}
+
+/* about */
+html[data-theme="dark"] .a-card,html[data-theme="dark"] .a-role{background:var(--elev)}
+html[data-theme="dark"] .a-card:hover,html[data-theme="dark"] .a-role:hover{background:var(--elev2);box-shadow:inset 0 0 0 1px var(--rule),0 18px 40px rgba(0,0,0,.4)}
+html[data-theme="dark"] .a-tools span{background:var(--tag);color:var(--ink)}
+
+/* case study */
+html[data-theme="dark"] .card,html[data-theme="dark"] .icard{background:var(--elev)}
+html[data-theme="dark"] .stat{background:var(--elev)}
+html[data-theme="dark"] .stat:hover{box-shadow:inset 0 0 0 1px var(--rule),0 18px 40px rgba(0,0,0,.4)}
+html[data-theme="dark"] .ring-bg{stroke:#2a2a2e}
+html[data-theme="dark"] .hmw{background:var(--elev);color:var(--ink)}
+html[data-theme="dark"] .sketch::before{border-color:#f3f3f1}
+html[data-theme="dark"] .tab{background:var(--tag);color:var(--ink-soft)}
+html[data-theme="dark"] .tab[aria-selected="true"]{background:#f3f3f1;color:#141414}
+html[data-theme="dark"] .live-link{color:var(--ink);border-color:var(--ink-soft)}
+html[data-theme="dark"] .live-link:hover{background:#f3f3f1;color:#141414}
+html[data-theme="dark"] .frame img{box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+html[data-theme="dark"] .frame.dark img{box-shadow:none}
+html[data-theme="dark"] .frame{background:var(--tag)}
+html[data-theme="dark"] .rail-link.active{color:var(--ink)}
+html[data-theme="dark"] .rail-link .pip{border-color:var(--ink-faint)}
+html[data-theme="dark"] .rail-link.active .pip,html[data-theme="dark"] .rail-link.got .pip{border-color:#c9c9cd}
+html[data-theme="dark"] .icard h3,html[data-theme="dark"] .card h3,html[data-theme="dark"] .a-card h3{color:var(--ink)}
+html[data-theme="dark"] .zoom-hint{background:#f3f3f1;color:#141414}
+html[data-theme="dark"] .ba{background:var(--elev);box-shadow:0 0 0 1px var(--rule)}
+html[data-theme="dark"] .hl{background:var(--foil-light);background-size:200% 100%;-webkit-background-clip:text;background-clip:text}
+html[data-theme="dark"] .win-frame,html[data-theme="dark"] .phone{box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+html[data-theme="dark"] .hero{box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+html[data-theme="dark"] .stat::before{opacity:.95}
+html[data-theme="dark"] .foil-text{filter:none}
+html[data-theme="dark"] .kicker,html[data-theme="dark"] .meta-label,html[data-theme="dark"] .eyebrow{filter:none}
+html[data-theme="dark"] .contrib li::before{box-shadow:0 1px 2px rgba(0,0,0,.6),inset -1px -1px 1.5px rgba(0,0,0,.25)}
+html[data-theme="dark"] .read-progress{opacity:.9}
+
+/* footer: already dark; lift it a touch so it separates from the page */
+html[data-theme="dark"] .footer{background:#070708;box-shadow:0 -1px 0 var(--rule)}
+
+
+/* nav text should never get highlighted by a double-click on the toggle */
+.navbar,.theme-toggle{-webkit-user-select:none;user-select:none}
+
+html[data-theme="dark"] .stat .val span,html[data-theme="dark"] .ring .val span{background:var(--foil-light);background-size:200% 100%;-webkit-background-clip:text;background-clip:text}
+html[data-theme="dark"] .dv-desktop .clip{box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+html[data-theme="dark"] .irows .icard{background:none}
+html[data-theme="dark"] .irows .icard:hover{background:linear-gradient(90deg,rgba(255,255,255,.04),transparent 70%)}

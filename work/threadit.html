@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Threadit | Jared Martinez</title>
+  <meta name="description" content="Case study: Threadit, a wardrobe app that helps people turn saved fashion inspiration into outfits they can wear. I led the Discovery feature on a team of five that won Best Overall.">
+  <meta name="theme-color" content="#0e0e10">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.7L12 17.5l-5.9 3.3 1.3-6.7L2.5 9.5l6.6-.8z' fill='%23222222'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+  <link rel="stylesheet" href="../css/dark.css">
+  <script>document.documentElement.setAttribute('data-theme','dark')</script>
+  <script>(function(){try{history.scrollRestoration='manual'}catch(e){}if(location.hash)return;var m=false;['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){m=true},{passive:true,once:true})});var de=document.documentElement;de.style.scrollBehavior='auto';setTimeout(function(){de.style.scrollBehavior=''},1800);function top(){if(!m&&(window.scrollY||de.scrollTop)){try{scrollTo({top:0,left:0,behavior:'instant'})}catch(e){scrollTo(0,0)}}}top();addEventListener('DOMContentLoaded',top);addEventListener('load',function(){top();var n=0;(function t(){top();if(++n<30)setTimeout(t,50)})()});addEventListener('pageshow',function(){m=false;top()})})()</script>
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body id="top">
+
+<body id="top">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" repeatCount="indefinite"/></linearGradient></defs></svg>
+  <nav class="navbar" aria-label="Main">
+    <a class="nav-logo" href="../index.html" aria-label="Jared, home">Jared</a>
+    <div class="nav-right">
+      <div class="nav-links" id="nav-menu">
+        <a class="nav-link" href="../index.html#projects" aria-current="page">Work</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" data-site="resume" data-root="../" href="#" target="_blank" rel="noopener noreferrer">Résumé<span class="nav-link-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 17.5 11-11m0 9v-9h-9"/></svg></span></a>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span class="nav-toggle-bars" aria-hidden="true"></span></button>
+    </div>
+  </nav>
+
+
+  <header class="cs-head">
+    <a class="back-m" href="../index.html#projects"><span aria-hidden="true">←</span> Back home</a>
+    <div class="cs-top">
+      <div class="cs-titles">
+        <h1 class="title">Threadit</h1>
+        <p class="subtitle">Turning saved inspiration into outfits people can actually wear</p>
+      </div>
+      <div class="meta">
+        <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value"><span>UX Designer</span><span>Discovery Lead</span><span>UX Researcher</span></span></div>
+        <div class="meta-item"><span class="meta-label">Team</span><span class="meta-value"><span>4 Designers</span><span>1 Design Lead</span><span>1 Mentor</span></span></div>
+        <div class="meta-item"><span class="meta-label">Timeline</span><span class="meta-value"><span>Apr 16 – May 28, 2026</span><span>(7 Weeks)</span></span></div>
+        <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value"><span>Figma</span><span>FigJam</span><span>Notion</span></span></div>
+      </div>
+    </div>
+    <div class="hero hero-static" id="cover" aria-label="Four screens from the Threadit app: the for-you feed, a color board, a brand page, and the Style Match sheet">
+      <img src="../assets/img/th-hero.webp" alt="Four Threadit screens on phones: the for-you feed with a weather card, a color board, a Zara brand page, and the Style Match sheet" width="1960" height="1220">
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="rail" id="rail" aria-label="Sections">
+      <a class="rail-link rail-home" href="../index.html#projects"><span class="arr" aria-hidden="true">←</span>Back home</a>
+      <div class="rail-list">
+        <a class="rail-link is-tldr" href="#overview"><span class="pip"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.7L12 17.5l-5.9 3.3 1.3-6.7L2.5 9.5l6.6-.8z"/></svg></span>Context</a>
+        <a class="rail-link" href="#problem"><span class="pip"></span>Problem</a>
+        <a class="rail-link" href="#research"><span class="pip"></span>User Research</a>
+        <a class="rail-link" href="#team"><span class="pip"></span>The Team</a>
+        <a class="rail-link" href="#design"><span class="pip"></span>Design Process</a>
+        <a class="rail-link" href="#tradeoffs"><span class="pip"></span>Tradeoffs</a>
+        <a class="rail-link" href="#solution"><span class="pip"></span>Solution</a>
+        <a class="rail-link" href="#outcome"><span class="pip"></span>Outcome</a>
+        <a class="rail-link" href="#reflection"><span class="pip"></span>Reflection</a>
+      </div>
+      <div class="rail-count" aria-live="polite">Read <b>0</b>/9</div>
+      <a class="rail-link rail-top" href="#top">↑ Back to top</a>
+    </nav>
+
+    <main class="page">
+<!-- ═══ CONTEXT ═══ -->
+      <section class="section" id="overview">
+        <div class="kicker">Context</div>
+        <h2 class="statement reveal">Five designers built a wardrobe app to close the gap between saving an outfit and wearing it</h2>
+        <div class="cards three reveal">
+          <div class="card"><h3>Prompt</h3><p>UC Davis Design Interactive’s Spring ’26 cohort asked us to help people build a wardrobe that feels <strong>personal and intentional</strong>, when professional styling is expensive and out of reach.</p></div>
+          <div class="card"><h3>Problem</h3><p>People save endless outfit inspiration but can’t turn it into something they can wear. We called this the <strong>Translation Gap</strong>.</p></div>
+          <div class="card"><h3>Impact</h3><p>We pitched Threadit to three industry judges on presentation night, and our team won <strong>Best Overall</strong>.</p></div>
+
+        </div>
+        <div class="kicker sub reveal">Solution sneak peek</div>
+        <figure class="figure reveal">
+          <div class="phones five" style="--n:5"><figure class="ph"><div class="vp"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/th-vp-onboarding.webp" aria-label="Screen recording of the Threadit onboarding flow: choosing sections, style, goals, a first closet and sizing"><source src="../assets/video/th-onboarding.webm" type="video/webm"><source src="../assets/video/th-onboarding.mp4" type="video/mp4"></video></div><figcaption><b>Onboarding</b></figcaption></figure><figure class="ph"><div class="vp"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/th-vp-discovery.webp" aria-label="Screen recording of Threadit Discovery: searching for a brand, opening its page, and using Style Match to swap in pieces you own"><source src="../assets/video/th-discovery.webm" type="video/webm"><source src="../assets/video/th-discovery.mp4" type="video/mp4"></video></div><figcaption><b>Discovery</b><em>Mine</em></figcaption></figure><figure class="ph"><div class="vp"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/th-vp-closet.webp" aria-label="Screen recording of the Threadit closet: browsing the wardrobe and scanning a new item with the camera"><source src="../assets/video/th-closet.webm" type="video/webm"><source src="../assets/video/th-closet.mp4" type="video/mp4"></video></div><figcaption><b>Closet</b></figcaption></figure><figure class="ph"><div class="vp"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/th-vp-calendar.webp" aria-label="Screen recording of the Threadit calendar: a weekly outfit log and a day view that asks what you are wearing"><source src="../assets/video/th-calendar.webm" type="video/webm"><source src="../assets/video/th-calendar.mp4" type="video/mp4"></video></div><figcaption><b>Calendar</b></figcaption></figure><figure class="ph"><div class="vp"><video class="clip" data-loop autoplay muted loop playsinline preload="metadata" poster="../assets/img/th-vp-planning.webp" aria-label="Screen recording of Threadit planning: choosing pieces, previewing an outfit, and saving it to the calendar"><source src="../assets/video/th-planning.webm" type="video/webm"><source src="../assets/video/th-planning.mp4" type="video/mp4"></video></div><figcaption><b>Plan</b></figcaption></figure></div>
+          <figcaption>The five features of Threadit. I designed Discovery.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section" id="problem" data-card="Problem">
+        <div class="kicker">Problem</div>
+        <h2 class="statement reveal">Everyone had endless inspiration, but nobody knew how to wear it</h2>
+        <div class="prose reveal">
+          <p>Our prompt asked how people can build a wardrobe that feels like <strong>theirs</strong>. Before designing anything, we wrote down what we assumed and tested it. One person kept coming up, so we gave her a name: <strong>Maya</strong>, a composite of the patterns we kept seeing.</p>
+        </div>
+                <div class="personas reveal" role="group" aria-label="Maya has hundreds of saved looks and a full closet, and still texts her sister that she does not know what to wear">
+            <svg class="p-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+              <filter id="wobble" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="1" result="n"><animate class="boil" attributeName="seed" values="1;4;7;2;9;5" dur="0.9s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4"/></filter>
+              <linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" begin="-3s" repeatCount="indefinite"/></linearGradient><linearGradient id="pg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" begin="-6s" repeatCount="indefinite"/></linearGradient><linearGradient id="pg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="9s" begin="-9s" repeatCount="indefinite"/></linearGradient>
+              <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".45" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+            </defs></svg>
+            <div class="persona" style="--i:0">
+              <div class="bubble"><svg class="bubble-line" viewBox="0 0 240 112" preserveAspectRatio="none" aria-hidden="true"><path d="M18 6H222Q234 6 234 18V70Q234 82 222 82H138L118 104L104 82H18Q6 82 6 70V18Q6 6 18 6Z"/></svg><p>“200+ saved Pinterest boards”</p></div>
+              <svg class="person" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg2)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg2)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg>
+              <h3>She saves it</h3><p class="pdesc">Boards of looks she loves</p><span class="ptag">Maya</span>
+            </div>
+            <div class="persona" style="--i:1">
+              <div class="bubble"><svg class="bubble-line" viewBox="0 0 240 112" preserveAspectRatio="none" aria-hidden="true"><path d="M18 6H222Q234 6 234 18V70Q234 82 222 82H138L118 104L104 82H18Q6 82 6 70V18Q6 6 18 6Z"/></svg><p>“A closet full of clothes”</p></div>
+              <svg class="person" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg1)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg1)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg>
+              <h3>She owns it</h3><p class="pdesc">Hundreds of options</p><span class="ptag">Maya</span>
+            </div>
+            <div class="persona" style="--i:2">
+              <div class="bubble"><svg class="bubble-line" viewBox="0 0 240 112" preserveAspectRatio="none" aria-hidden="true"><path d="M18 6H222Q234 6 234 18V70Q234 82 222 82H138L118 104L104 82H18Q6 82 6 70V18Q6 6 18 6Z"/></svg><p>“I don’t know what to wear.”</p></div>
+              <svg class="person" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg3)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg3)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg>
+              <h3>She texts her sister</h3><p class="pdesc">Every single morning</p><span class="ptag">Maya</span>
+            </div>
+          </div>
+        <div class="prose reveal"><p>Maya has plenty of inspiration. What she’s missing is a way to <strong>connect it to the clothes she owns</strong>. That space between finding a look and being able to wear it is the <strong>Translation Gap</strong>, and we set out to confirm it was real.</p></div>
+      </section>
+
+      <section class="section" id="research" data-card="Research">
+        <div class="kicker">User Research</div>
+        <h2 class="statement reveal">74 people shared Maya’s problem, and the four cohorts we interviewed all pointed back to it</h2>
+        <div class="prose reveal">
+          <p>We ran a screener survey of <strong>74 people</strong> to see how they find fashion and manage their wardrobes, then ran <strong>8+ interviews</strong> across the team. Each of us took a different cohort so we’d hear a range of habits, and we recruited from the survey: people answered screener questions, and the ones who opted in to an interview became our participants. Here is what the survey showed:</p>
+        </div>
+        <div class="stats three">
+          <div class="stat ring-stat reveal"><div class="ring" style="--off:5"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" pathLength="100"/></svg><div class="val"><span data-count="95" data-suffix="%">95%</span></div></div><div class="lab">found fashion inspiration online</div><div class="cap">Pinterest, Instagram, TikTok</div></div>
+          <div class="stat ring-stat reveal" style="--d:0.08s"><div class="ring" style="--off:28"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" pathLength="100"/></svg><div class="val"><span data-count="72" data-suffix="%">72%</span></div></div><div class="lab">had a full wardrobe but felt they had nothing to wear</div><div class="cap">The Translation Gap, in numbers</div></div>
+          <div class="stat ring-stat reveal" style="--d:0.16s"><div class="ring" style="--off:49"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" pathLength="100"/></svg><div class="val"><span data-count="51" data-suffix="%">51%</span></div></div><div class="lab">bought clothes they barely wore</div><div class="cap">More than half</div></div>
+        </div>
+        <div class="beat reveal">
+          <h3>Four cohorts, four ways of chasing a look</h3>
+          <div class="contrib"><ul>
+            <li><strong>The Exact Hunter (me, 4 interviews):</strong> sees an outfit they love and searches everywhere for that exact item.</li>
+            <li><strong>The Vibe Adopter (Nathan):</strong> wants the feel of a look, so saves boards by style instead of by piece.</li>
+            <li><strong>The Parasocial Shopper (Grace):</strong> buys what their favorite creators wear, through affiliate links and GRWM videos.</li>
+            <li><strong>The Identity-First Viewer (Emily):</strong> buys when they see someone who looks like them wearing it.</li>
+          </ul></div>
+        </div>
+        <figure class="figure reveal">
+          <div class="frame" style="max-width:600px;margin-inline:auto"><img class="zoomable" src="../assets/img/th-interview.webp" alt="Jared gesturing while interviewing a participant across a table, with a laptop and notes in front of him" width="878" height="660" loading="lazy"></div>
+          <figcaption>Me interviewing for the Exact Hunter cohort.</figcaption>
+        </figure>
+        <div class="prose reveal"><p>The four people I interviewed had all answered the screener as Exact Hunters. They hunt for the exact piece, so they showed me where the trust breaks down:</p></div>
+        <div class="contrib reveal"><ul>
+          <li><strong>Screens never look one-to-one.</strong> One interviewee said online outfits never look the same on her because of “ideal bodies.” Another wanted to try pieces in person first.</li>
+          <li><strong>Listing photos lost trust.</strong> One stopped trusting listings when review photos didn’t match the real product.</li>
+          <li><strong>Saves piled up with no system.</strong> Saved items got lost, or sat in a cart as a makeshift wishlist.</li>
+          <li><strong>They bought by fit with what they owned,</strong> asking how well a piece would work with their existing wardrobe.</li>
+        </ul></div>
+        <div class="hmw sketch reveal"><small>Takeaway</small><p>People don’t lack inspiration. They lack a way to <span class="hl">connect</span> it to what they already own, so it feels like theirs.</p></div>
+        <div class="hmw sketch reveal"><small>How might we</small><p>Help people turn the fashion inspiration they gather into outfits that feel <span class="hl">confidently theirs</span>?</p></div>
+      </section>
+
+      <section class="section" id="team" data-card="Team">
+        <div class="kicker">The Team</div>
+        <h2 class="statement reveal">We split the app into five features, and I owned Discovery</h2>
+        <div class="prose reveal"><p>After research, we mapped features with a feature matrix, affinity mapping, and user flows, and landed on five. Each designer led one:</p></div>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="igr" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="46" y2="46"><stop offset="0.000" stop-color="#ff6fb8"/><stop offset="0.167" stop-color="#9b7bff"/><stop offset="0.333" stop-color="#4db3ff"/><stop offset="0.500" stop-color="#46d9ae"/><stop offset="0.667" stop-color="#ffcf4d"/><stop offset="0.833" stop-color="#ff9a6b"/><stop offset="1.000" stop-color="#ff6fb8"/><animateTransform attributeName="gradientTransform" type="rotate" from="0 24 24" to="360 24 24" dur="9s" repeatCount="indefinite"/></linearGradient></defs></svg><div class="irows reveal"><div class="icard"><span class="icard-ic" style="--i:0"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l5 13 14 1-11 9 4 14-12-8-12 8 4-14L5 18l14-1z" fill="url(#igr)"/></svg></span><h3>Onboarding · Nathan</h3><p>A style quiz and a curated moodboard so users understand their own fashion identity. Nathan also built the design system.</p></div><div class="icard"><span class="icard-ic" style="--i:1"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="13" fill="none" stroke="url(#igr)" stroke-width="6" stroke-linecap="round"/><path d="M31 31l11 11" stroke="url(#igr)" stroke-width="7" stroke-linecap="round" fill="none"/></svg></span><h3>Discovery · me</h3><p>The for-you feed, boards, and Style Match, which breaks inspiration looks down against what you already own.</p></div><div class="icard"><span class="icard-ic" style="--i:2"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 14a5 5 0 1 1 5 5c-3 1-5 2-5 5v3L6 38a3 3 0 0 0 2 5h32a3 3 0 0 0 2-5L24 27" fill="none" stroke="url(#igr)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Closet · Emily</h3><p>A digital wardrobe with categories, filters, wear counts, an “In Wash” toggle, and a wishlist.</p></div><div class="icard"><span class="icard-ic" style="--i:3"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="33" rx="8" fill="url(#igr)"/><path d="M6 20h36" stroke="#0e0e10" stroke-width="3.4"/><path d="M15 4v9M33 4v9" stroke="url(#igr)" stroke-width="5" stroke-linecap="round"/></svg></span><h3>Calendar and Plan · Grace</h3><p>An outfit log, plus a short planning quiz with a weather auto-filter and saved looks for easy re-wearing.</p></div><div class="icard"><span class="icard-ic" style="--i:4"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V10l30 8-30 8" fill="url(#igr)" stroke="url(#igr)" stroke-width="4" stroke-linejoin="round"/></svg></span><h3>Design Lead · Sidney</h3><p>Kept five features feeling like one app, and opened and closed our final pitch.</p></div></div>
+      </section>
+
+      <section class="section" id="design" data-card="Design">
+        <div class="kicker">Design Process</div>
+        <div class="hmw sketch reveal"><small>My design challenge</small><p>How might we show people what they <span class="hl">already own</span> the moment they find a look they love?</p></div>
+        <div class="beat reveal">
+          <h3>I sketched eight ideas, then storyboarded the two my interviews pushed me toward</h3>
+          <p>My Crazy 8s ranged from style “characters” and AI avatars to an <strong>Add to Your Closet</strong> flow. I storyboarded two against what my interviewees said: <strong>community reviews filtered by body type</strong>, and a <strong>virtual closet</strong> that suggests outfits from clothes you already own. The virtual closet answered the saved-items-with-no-system problem, and it became the seed of Style Match.</p>
+          <div class="sk-row">
+            <figure class="sk"><img class="zoomable" src="../assets/img/th-sk-crazy8.webp" alt="Jared’s Crazy 8s paper sketches: Discover Your Style, Add to Your Closet, Assign Your Model, Color Match, Build Your Avatar, Visualize Outfit, Discover Styles, and reviews" width="1000" height="1254" loading="lazy"><figcaption>Crazy 8s, drawn in the car</figcaption></figure>
+            <figure class="sk"><img class="zoomable" src="../assets/img/th-sk-story8.webp" alt="Storyboard: community physical attribute reviews, from seeing a look on Instagram to buying with confidence" width="900" height="1029" loading="lazy"><figcaption>Storyboard: reviews by body type</figcaption></figure>
+            <figure class="sk"><img class="zoomable" src="../assets/img/th-sk-story2.webp" alt="Storyboard: virtual closet, from scrolling TikTok to buying a piece that completes a look with clothes she owns" width="900" height="1028" loading="lazy"><figcaption>Storyboard: virtual closet</figcaption></figure>
+          </div>
+          <p class="sk-hint">Click a sketch to enlarge it.</p>
+        </div>
+        <div class="beat reveal">
+          <h3>Card sorting said Discovery comes first, so it led the app</h3>
+          <p>We card sorted with three participants who each related to fashion differently. Three patterns held across all of them:</p>
+          <div class="contrib"><ul>
+            <li><strong>Discovery came first.</strong> The for-you feed, search, and outfit suggestions ranked highest, so inspiration is why people open the app.</li>
+            <li><strong>Context and weather mattered more than expected,</strong> which is why Planning got a weather auto-filter.</li>
+            <li><strong>Social features landed last.</strong> Nobody valued public profiles, so we kept Threadit personal.</li>
+          </ul></div>
+        </div>
+        <div class="beat reveal">
+          <h3>From gray boxes to a sheet that shows what you already own</h3>
+          <p>Style Match opens a sheet for a look. Each piece is tagged <strong>From Look</strong>, <strong>Owned</strong>, or <strong>Find Similar</strong>, and a swap row lets you substitute something from your own closet. Mid-fi proved the layout. Hi-fi added real products so the match felt believable.</p>
+          <figure class="figure panel">
+            <div class="ba ba-tall" data-ba style="--p:50%">
+              <img class="ba-img" src="../assets/img/th-ba-hifi.webp" alt="Hi-fi Style Match sheet with real products tagged From Look, Owned and Find Similar, and a row to swap in pieces you own" width="900" height="1800" loading="lazy">
+              <div class="ba-top"><img src="../assets/img/th-ba-mid.webp" alt="Mid-fi Style Match sheet with gray placeholder images and an 87 percent style match note" width="900" height="1800" loading="lazy"></div>
+              <div class="ba-handle" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+              <span class="ba-tag l">Mid-fi</span><span class="ba-tag r">Hi-fi</span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the mid-fi and hi-fi Style Match sheet">
+            </div>
+            <figcaption>Drag to compare. The mid-fi sheet used gray placeholders and a style-match score. Hi-fi swapped in real products.</figcaption>
+          </figure>
+        </div>
+        <div class="beat reveal">
+          <h3>Testing showed people missed Style Match, so we moved it up</h3>
+          <p>We tested the mid-fi screens with <strong>5 participants</strong> doing five tasks aloud, one per feature. Four findings shaped hi-fi:</p>
+          <div class="contrib"><ul>
+            <li><strong>4 of 5 missed Style Match at first.</strong> It sat in secondary navigation. Once they found it, 3 of 5 said they’d use it in real life, and one said, “oh, I actually own pieces like this!” So we moved it to <strong>primary navigation</strong>.</li>
+            <li><strong>Logging was easy, but context was missing.</strong> 4 of 5 forgot to tag the occasion or weather, so we inferred weather and location automatically.</li>
+            <li><strong>The planning quiz felt long.</strong> We cut it from 4 steps to 3, with mood optional.</li>
+            <li>We also added a <strong>“first wear”</strong> highlight in the closet and quick-logging shortcuts.</li>
+          </ul></div>
+        </div>
+      </section>
+
+      <section class="section" id="tradeoffs" data-card="Tradeoffs">
+        <div class="kicker">Tradeoffs</div>
+        <h2 class="statement reveal">We cut the AR try-on, because a virtual body doesn’t build confidence</h2>
+        <div class="prose reveal"><p>The brief was about confidence. We first explored an <strong>AR try-on</strong> that would show clothes on a virtual body, and I had sketched avatars and body-based reviews myself. As we built, the team kept coming back to the same worry: <strong>a model on a screen can make people feel they have to match it</strong>, not feel okay about what they wear.</p></div>
+        <div class="hmw sketch reveal"><small>Design philosophy</small><p>Build <span class="hl">confidence</span>, not hinder it. Only you know what makes you feel confident.</p></div>
+        <div class="contrib reveal"><ul>
+          <li><strong>Cut the try-on and the avatar.</strong> The feature would have made the app about how people look, not how they dress.</li>
+          <li><strong>Asked how people want to dress, not who they are.</strong> We chose sizing and fit over body numbers, and style preferences over fixed categories.</li>
+          <li><strong>Kept it personal.</strong> Card sorting showed no one wanted public profiles, so there’s no social feed to compare against.</li>
+        </ul></div>
+      </section>
+
+      <section class="section" id="solution" data-card="Solution">
+        <div class="kicker">Solution</div>
+        <div class="beat reveal">
+          <h3>Discovery turns a look you love into what you can wear today</h3>
+          <p>Users spent <strong>45+ minutes</strong> trying to work out what to wear from their own closet, with no way to tell if a look would work. Discovery starts from inspiration and ends at the wardrobe.</p>
+          <div class="phones four" style="--n:4"><figure class="ph"><div class="iph"><div class="iph-scr"><img class="zoomable" src="../assets/img/th-d-feed.webp" alt="The for-you feed with a weather card and outfit photos" loading="lazy"></div><i class="iph-isl"></i><i class="iph-home"></i><i class="hw hw-a"></i><i class="hw hw-b"></i><i class="hw hw-c"></i><i class="hw hw-p"></i></div><figcaption><b>For-you feed</b>A weather card shows what works on days like today.</figcaption></figure><figure class="ph"><div class="iph"><div class="iph-scr"><img class="zoomable" src="../assets/img/th-d-color.webp" alt="The Color Board screen: pick a base color and see items found from your wardrobe" loading="lazy"></div><i class="iph-isl"></i><i class="iph-home"></i><i class="hw hw-a"></i><i class="hw hw-b"></i><i class="hw hw-c"></i><i class="hw hw-p"></i></div><figcaption><b>Boards</b>Color, occasion, and aesthetic boards from your saves.</figcaption></figure><figure class="ph"><div class="iph"><div class="iph-scr"><img class="zoomable" src="../assets/img/th-d-zara.webp" alt="A Zara brand page with Looks and Brand Looks tabs" loading="lazy"></div><i class="iph-isl"></i><i class="iph-home"></i><i class="hw hw-a"></i><i class="hw hw-b"></i><i class="hw hw-c"></i><i class="hw hw-p"></i></div><figcaption><b>Brand pages</b>See looks from a brand, and which pieces you own.</figcaption></figure><figure class="ph"><div class="iph"><div class="iph-scr"><img class="zoomable" src="../assets/img/th-d-style.webp" alt="The Style Match sheet with pieces tagged From Look, Owned and Find Similar" loading="lazy"></div><i class="iph-isl"></i><i class="iph-home"></i><i class="hw hw-a"></i><i class="hw hw-b"></i><i class="hw hw-c"></i><i class="hw hw-p"></i></div><figcaption><b>Style Match</b>Break a look down and swap in what you own.</figcaption></figure></div>
+          <div class="contrib">
+            <ul>
+              <li><strong>For-you feed</strong> opens with a weather card, such as “Rainy in Davis today,” so inspiration is matched to the day.</li>
+              <li><strong>Boards</strong> group saves by color, occasion, or aesthetic, and preview matching items from your own wardrobe.</li>
+              <li><strong>Style Match</strong> shows what’s from the look, what you already own, and what you still need. Items marked <strong>Owned</strong> pull from your closet so you never rebuy, and <strong>Find Similar</strong> keeps the search from dead-ending.</li>
+              <li><strong>Camera</strong> lets you point at a piece to find outfit ideas.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="beat reveal">
+          <h3>Five features, each closing one stretch of the journey</h3>
+          <div class="contrib"><ul>
+            <li><strong>Onboarding</strong> turns a style quiz into a curated moodboard with new insights, like a color that matches your wardrobe.</li>
+            <li><strong>Discovery</strong> connects looks you love to what you own.</li>
+            <li><strong>Closet</strong> organizes everything, with wear counts to show your most and least worn pieces.</li>
+            <li><strong>Calendar</strong> logs what you wore, so you can see what worked.</li>
+            <li><strong>Plan</strong> narrows your wardrobe by weather and occasion, and saves looks you want to wear again.</li>
+          </ul></div>
+        </div>
+      </section>
+
+      <section class="section" id="outcome" data-card="Results">
+        <div class="kicker">Outcome</div>
+        <h2 class="statement reveal">We won Best Overall by telling Maya’s story instead of listing features</h2>
+        <div class="prose reveal">
+          <p>On presentation night, we pitched Threadit around Maya’s morning, not a feature tour. We showed how it fixed her problems one by one: <strong>knowing her style</strong>, <strong>seeing that a look was achievable with pieces she owned</strong>, and <strong>replacing decision paralysis with clarity</strong>.</p>
+        </div>
+        <div class="stats">
+          <div class="stat reveal"><div class="val"><span data-count="74">74</span></div><div class="lab">Survey responses</div><div class="cap">Behind the Translation Gap</div></div>
+          <div class="stat reveal" style="--d:0.07s"><div class="val"><span data-count="8" data-suffix="+">8+</span></div><div class="lab">User interviews</div><div class="cap">4 of them mine</div></div>
+          <div class="stat reveal" style="--d:0.14s"><div class="val"><span data-count="3">3</span></div><div class="lab">Industry judges</div><div class="cap">LinkedIn, ServiceNow, Computrition</div></div>
+          <div class="stat reveal" style="--d:0.21s"><div class="val"><span data-count="1">1</span></div><div class="lab">Best Overall</div><div class="cap">Design Interactive, Spring ’26</div></div>
+        </div>
+        <div class="beat reveal"><h3>The judges singled out the storytelling</h3><p>Our judges were Chris Ota (Staff Product Designer, LinkedIn), Ken Skistimas (Director of UX, ServiceNow), and Aditi Jain (UI Designer, Computrition). All three praised how the story connected research to the solution. Anchoring everything in Maya made the Translation Gap feel real, and made Threadit feel like a solution to a problem instead of a pile of features.</p></div>
+        <div class="prose reveal"><p>While they were deciding the winner, two of the judges said:</p></div>
+        <div class="voices judges reveal" role="group" aria-label="What the judges said while deciding the winner"><div class="voice-card" style="--i:0"><div class="qb"><p>“Even without the numbers, my top three would be Threadit being number one… Just overall concept, execution, presentation, taking all of those things into mind.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg1)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg1)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>Chris Ota, Staff Product Designer, LinkedIn</cite></div><div class="voice-card" style="--i:1"><div class="qb"><p>“Where have they taken them to, like, an unexpected place? And I think the wardrobe app did that.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg3)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg3)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>Ken Skistimas, Director of UX, ServiceNow</cite></div><div class="voice-card" style="--i:2"><div class="qb"><p>“They pushed it and had a really good preso behind it too… probably the best out of them with the articulation and everything.”</p></div><svg class="person sm" viewBox="0 0 100 100" aria-hidden="true"><g class="person-g"><circle cx="50" cy="31" r="19" fill="url(#pg2)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#pg2)"/><circle cx="50" cy="31" r="19" fill="url(#gloss)"/><path d="M16 84C16 68 30 59 50 59C70 59 84 68 84 84Q84 95 73 95H27Q16 95 16 84Z" fill="url(#gloss)"/></g></svg><cite>Ken Skistimas, Director of UX, ServiceNow</cite></div></div>
+
+        <figure class="figure reveal">
+          <div class="frame" style="max-width:640px;margin-inline:auto"><img class="zoomable" src="../assets/img/th-award.webp" alt="The five-person Threadit team holding their Best Overall and completion certificates in front of a balloon backdrop" width="1000" height="750" loading="lazy"></div>
+          <figcaption>The Threadit team on presentation night.</figcaption>
+        </figure>
+        <div class="beat reveal"><h3>Where Threadit goes next</h3>
+          <div class="contrib"><ul>
+            <li><strong>0 to 1:</strong> build a working prototype that tests the full loop from inspiration to outfit, and add UX writing at every touchpoint to build confidence.</li>
+            <li><strong>1 to 2:</strong> explore a business model, like a freemium tier with premium styling and partnerships with retailers.</li>
+          </ul></div>
+        </div>
+      </section>
+
+      <section class="section" id="reflection" data-card="Reflection">
+        <div class="kicker">Reflection</div>
+        <h2 class="statement reveal">What I’d do differently</h2>
+        <div class="contrib reveal">
+          <ul>
+            <li><strong>Put the core feature where people look.</strong> 4 of 5 testers missed Style Match because I tucked it into secondary navigation. Next time I’d test where the main feature lives first.</li>
+            <li><strong>Test the whole loop, not one screen at a time.</strong> Our tasks covered each feature. I’d test whether someone can go from a saved look to a worn outfit using their own closet.</li>
+            <li><strong>Question ideas against the brief sooner.</strong> I sketched body-based ideas early, and we only cut the AR try-on mid-build. Asking “does this build confidence?” from the start would have saved time.</li>
+          </ul>
+        </div>
+        <div class="prose reveal"><p>Thank you to my teammates Sidney Heng, Nathan Salas, Grace Asuncion, and Emily Wu; to our industry mentor, Juliana Viado (Product Designer, Leela); and to Design Interactive.</p></div>
+      </section>
+      <div class="tail"></div>
+    </main>
+  </div>
+
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <p class="footer-eyebrow reveal">Open to UX design internships</p>
+      <h2 class="footer-big reveal">Let’s make something <em>easy to use</em> together.</h2>
+      <a class="footer-cta reveal" data-site="email" href="#" data-cursor="Say hello">Say hello <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 17.5 11-11m0 9v-9h-9"/></svg></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a class="footer-link" data-site="linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-link" data-site="resume" data-root="../" href="#" target="_blank" rel="noopener noreferrer">Résumé</a>
+        <a class="footer-link" href="../index.html#projects">Work</a>
+        <a class="footer-link" href="../about.html">About</a>
+      </nav>
+      <div class="footer-base">
+        <div class="footer-name">© 2026 Jared Martinez</div>
+        <div class="footer-push">Designed &amp; coded by Jared</div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lb" aria-label="Enlarged image">
+    <div class="lb-in"><button class="lb-x" type="button">Close ✕</button><img alt=""><p></p></div>
+  </dialog>
+
+    <script src="../js/site.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/cursor.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
