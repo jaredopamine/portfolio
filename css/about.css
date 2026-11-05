@@ -296,3 +296,4 @@ a.x-row:hover .x-go{opacity:1;transform:none}
 @media (max-width:900px){.x-intro .x-portrait{max-width:280px;order:-1}}
 /* photos are no longer click-to-enlarge */
 .x-m .x-mf>img,.x-m .x-mf>.x-fan ~ img{cursor:default}
+.x-m figcaption,.x-feat figcaption{width:0;min-width:100%;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word}
