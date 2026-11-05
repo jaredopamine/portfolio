@@ -297,3 +297,15 @@ a.x-row:hover .x-go{opacity:1;transform:none}
 /* photos are no longer click-to-enlarge */
 .x-m .x-mf>img,.x-m .x-mf>.x-fan ~ img{cursor:default}
 .x-m figcaption,.x-feat figcaption{width:0;min-width:100%;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word}
+/* portrait lines up with the intro text, top and bottom */
+@media (min-width:901px){
+  .x-intro{align-items:stretch}
+  .x-intro .x-portrait{display:flex;align-self:stretch}
+  .x-intro .x-portrait img{height:100%;object-fit:cover;object-position:center 22%}
+}
+@media (min-width:901px){
+  .x-intro{grid-template-columns:minmax(0,1fr) 340px}
+  .x-intro .x-copy{align-self:start}
+  .x-intro .x-portrait{height:0;min-height:100%;align-self:stretch}
+  .x-intro .x-portrait img{height:100%;object-position:center 18%}
+}
