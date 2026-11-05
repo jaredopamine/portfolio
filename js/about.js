@@ -161,7 +161,7 @@
   }
   function syncAllFeats() { feats.forEach(syncFeat); }
   document.addEventListener('click', function (e) {
-    var b = e.target.closest ? e.target.closest('.x-expand') : null;
+    var b = e.target.closest ? e.target.closest('.x-hit, .x-expand') : null;
     if (!b) return;
     e.preventDefault(); var a = b.parentNode.querySelector('a[data-yt]'); if (a) show(a, 'yt');
   });
