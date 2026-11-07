@@ -149,15 +149,28 @@
     if (!('IntersectionObserver' in window) || reduce) return;
     new IntersectionObserver(function (es) { st.vis = es[0].isIntersecting; syncFeat(st); }, { threshold: 0.5 }).observe(a.closest('.x-mf'));
   });
+  /* The player stays in place once it has started. Leaving the screen (or opening the overlay) only pauses it,
+     and coming back resumes from the same spot. */
+  function ytCmd(st, fn) {
+    try { st.ifr.contentWindow.postMessage(JSON.stringify({ event: 'command', func: fn, args: '' }), '*'); } catch (_) {}
+  }
+  function applyFeat(st) {
+    if (!st.ifr || !st.ready) return;
+    ytCmd(st, st.want ? 'playVideo' : 'pauseVideo');
+  }
   function syncFeat(st) {
-    var want = st.vis && !open;
-    if (want && !st.ifr) {
+    st.want = st.vis && !open;
+    if (st.want && !st.ifr) {
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(st.id) + '?autoplay=1&mute=1&loop=1&playlist=' + encodeURIComponent(st.id) + '&playsinline=1&rel=0&modestbranding=1';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(st.id) + '?autoplay=1&mute=1&loop=1&playlist=' + encodeURIComponent(st.id) + '&playsinline=1&rel=0&modestbranding=1&enablejsapi=1';
       f.title = 'Video'; f.className = 'x-vframe'; f.referrerPolicy = 'strict-origin-when-cross-origin';
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
-      st.a.hidden = true; st.a.parentNode.insertBefore(f, st.a.nextSibling); st.ifr = f;
-    } else if (!want && st.ifr) { st.ifr.remove(); st.ifr = null; st.a.hidden = false; }
+      f.addEventListener('load', function () {
+        try { f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: st.id }), '*'); } catch (_) {}
+        setTimeout(function () { st.ready = true; applyFeat(st); }, 900);
+      });
+      st.a.hidden = true; st.a.parentNode.insertBefore(f, st.a.nextSibling); st.ifr = f; st.ready = false;
+    } else if (st.ifr) { applyFeat(st); }
   }
   function syncAllFeats() { feats.forEach(syncFeat); }
   document.addEventListener('click', function (e) {
