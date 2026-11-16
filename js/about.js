@@ -193,7 +193,7 @@
   /* Each time a video scrolls into view it waits a moment before it starts, so the page settles first.
      The player is created without autoplay and without on-screen controls (controls=0), so there is no
      pause / volume / timeline bar to linger over the clip. Clicking the tile still opens the full player. */
-  var FEAT_DELAY = 3000;
+  var FEAT_DELAY = 1000;
   function applyFeat(st) {
     if (!st.ifr || !st.ready) return;
     if (st.want && st.go) { sendAudio(st); ytCmd(st, 'playVideo'); }
