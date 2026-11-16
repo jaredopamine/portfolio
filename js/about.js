@@ -154,15 +154,25 @@
   function ytCmd(st, fn) {
     try { st.ifr.contentWindow.postMessage(JSON.stringify({ event: 'command', func: fn, args: '' }), '*'); } catch (_) {}
   }
+  /* Each time a video scrolls into view it waits a moment before it starts, so the page settles first.
+     The player is created without autoplay and without on-screen controls (controls=0), so there is no
+     pause / volume / timeline bar to linger over the clip. Clicking the tile still opens the full player. */
+  var FEAT_DELAY = 3000;
   function applyFeat(st) {
     if (!st.ifr || !st.ready) return;
-    ytCmd(st, st.want ? 'playVideo' : 'pauseVideo');
+    ytCmd(st, (st.want && st.go) ? 'playVideo' : 'pauseVideo');
   }
   function syncFeat(st) {
+    var was = st.want;
     st.want = st.vis && !open;
+    if (st.want && !was) {
+      st.go = false; clearTimeout(st.timer);
+      st.timer = setTimeout(function () { st.go = true; applyFeat(st); }, reduce ? 0 : FEAT_DELAY);
+    }
+    if (!st.want) { clearTimeout(st.timer); st.go = false; }
     if (st.want && !st.ifr) {
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(st.id) + '?autoplay=1&mute=1&loop=1&playlist=' + encodeURIComponent(st.id) + '&playsinline=1&rel=0&modestbranding=1&enablejsapi=1';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(st.id) + '?mute=1&loop=1&playlist=' + encodeURIComponent(st.id) + '&playsinline=1&rel=0&modestbranding=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1';
       f.title = 'Video'; f.className = 'x-vframe'; f.referrerPolicy = 'strict-origin-when-cross-origin';
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
       f.addEventListener('load', function () {
