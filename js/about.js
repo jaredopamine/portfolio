@@ -151,8 +151,44 @@
   });
   /* The player stays in place once it has started. Leaving the screen (or opening the overlay) only pauses it,
      and coming back resumes from the same spot. */
-  function ytCmd(st, fn) {
-    try { st.ifr.contentWindow.postMessage(JSON.stringify({ event: 'command', func: fn, args: '' }), '*'); } catch (_) {}
+  function ytCmd(st, fn, args) {
+    try { st.ifr.contentWindow.postMessage(JSON.stringify({ event: 'command', func: fn, args: args || '' }), '*'); } catch (_) {}
+  }
+  /* Our own small volume control (YouTube's bar also brings Copy link and More videos, so it stays off).
+     The clip starts muted, as browsers require; the speaker button and slider change that. */
+  var ICON_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  var ICON_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9.5 5 5"/><path d="m21 9.5-5 5"/></svg>';
+  function sendAudio(st) {
+    if (!st.ifr || !st.ready) return;
+    if (st.muted) ytCmd(st, 'mute');
+    else { ytCmd(st, 'unMute'); ytCmd(st, 'setVolume', [st.volume]); }
+  }
+  function buildVol(st) {
+    st.muted = true; st.volume = 60;
+    var box = document.createElement('div'); box.className = 'x-vol';
+    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'x-vol-btn';
+    var rng = document.createElement('input'); rng.type = 'range'; rng.min = '0'; rng.max = '100'; rng.step = '1'; rng.className = 'x-vol-range'; rng.setAttribute('aria-label', 'Volume');
+    function paint() {
+      btn.innerHTML = st.muted ? ICON_OFF : ICON_ON;
+      btn.setAttribute('aria-label', st.muted ? 'Turn sound on' : 'Mute');
+      rng.value = st.muted ? 0 : st.volume;
+    }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      st.muted = !st.muted;
+      if (!st.muted && st.volume < 1) st.volume = 60;
+      paint(); sendAudio(st);
+    });
+    rng.addEventListener('input', function () {
+      var v = parseInt(rng.value, 10) || 0;
+      if (v === 0) st.muted = true; else { st.muted = false; st.volume = v; }
+      btn.innerHTML = st.muted ? ICON_OFF : ICON_ON;
+      btn.setAttribute('aria-label', st.muted ? 'Turn sound on' : 'Mute');
+      sendAudio(st);
+    });
+    box.addEventListener('click', function (e) { e.stopPropagation(); });
+    box.appendChild(btn); box.appendChild(rng); paint();
+    st.a.parentNode.appendChild(box); st.volBox = box;
   }
   /* Each time a video scrolls into view it waits a moment before it starts, so the page settles first.
      The player is created without autoplay and without on-screen controls (controls=0), so there is no
@@ -160,7 +196,8 @@
   var FEAT_DELAY = 3000;
   function applyFeat(st) {
     if (!st.ifr || !st.ready) return;
-    ytCmd(st, (st.want && st.go) ? 'playVideo' : 'pauseVideo');
+    if (st.want && st.go) { sendAudio(st); ytCmd(st, 'playVideo'); }
+    else ytCmd(st, 'pauseVideo');
   }
   function syncFeat(st) {
     var was = st.want;
@@ -179,7 +216,7 @@
         try { f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: st.id }), '*'); } catch (_) {}
         setTimeout(function () { st.ready = true; applyFeat(st); }, 900);
       });
-      st.a.hidden = true; st.a.parentNode.insertBefore(f, st.a.nextSibling); st.ifr = f; st.ready = false;
+      st.a.hidden = true; st.a.parentNode.insertBefore(f, st.a.nextSibling); st.ifr = f; st.ready = false; buildVol(st);
     } else if (st.ifr) { applyFeat(st); }
   }
   function syncAllFeats() { feats.forEach(syncFeat); }

@@ -307,3 +307,17 @@ a.x-row:hover .x-go{opacity:1;transform:none}
 /* the featured YouTube video opens the overlay when clicked anywhere on it */
 .x-hit{position:absolute;inset:0;z-index:3;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer}
 .x-expand{pointer-events:none;z-index:4;display:grid;place-items:center}
+
+/* volume control on the featured clips */
+.x-vol{position:absolute;left:10px;bottom:10px;z-index:5;display:flex;align-items:center;height:34px;border-radius:17px;background:rgba(14,14,16,.72);color:#fff;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.x-vol-btn{width:34px;height:34px;flex:none;border:0;border-radius:50%;background:transparent;color:inherit;display:grid;place-items:center;padding:0;cursor:pointer}
+.x-vol-btn svg{width:18px;height:18px;display:block}
+.x-vol-btn:hover{background:rgba(255,255,255,.12)}
+.x-vol-btn:focus-visible,.x-vol-range:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.x-vol-range{-webkit-appearance:none;appearance:none;width:0;height:34px;margin:0;padding:0;opacity:0;background:transparent;cursor:pointer;transition:width .25s ease,opacity .2s ease,margin .25s ease}
+.x-vol:hover .x-vol-range,.x-vol:focus-within .x-vol-range{width:84px;opacity:1;margin:0 14px 0 2px}
+.x-vol-range::-webkit-slider-runnable-track{height:3px;border-radius:2px;background:rgba(255,255,255,.35)}
+.x-vol-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;border-radius:50%;background:#fff;margin-top:-4.5px;border:0}
+.x-vol-range::-moz-range-track{height:3px;border-radius:2px;background:rgba(255,255,255,.35)}
+.x-vol-range::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#fff;border:0}
+@media (hover:none){.x-vol-range{display:none}}
